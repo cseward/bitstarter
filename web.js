@@ -3,13 +3,13 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-var contents = fs.readFileSync('index.html').toString();
 
 app.get('/', function(request, response) {
+  var contents = fs.readFileSync('index.html').toString();
   response.send(contents);
 });
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
